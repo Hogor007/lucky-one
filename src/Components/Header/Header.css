@@ -1,0 +1,8 @@
+.logo{
+    width: 250px;
+}
+@media only scree and (max-width: 740px){
+    .logo{
+        width: 200px;
+    }
+}
