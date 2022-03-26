@@ -1,0 +1,29 @@
+.cart-image{
+    width: 40px;
+    border-radius: 50%;
+}
+.cart-info-parent{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 8px;
+}
+.delete-icon{
+    font-size: 20px;
+    cursor: pointer;
+}
+@media only screen and (max-width: 375px){
+    .cart-image{
+        width: 25px;
+    }
+    .cart-info-parent h6{
+        font-size: 13px;
+        margin-bottom: 0;
+    }
+    .delete-icon{
+        font-size: 15px;
+    }
+    .cart-info-parent{
+        margin: 3px;
+    }
+}
