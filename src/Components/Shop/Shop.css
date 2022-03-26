@@ -1,0 +1,108 @@
+.shop-grid{
+    display: grid !important;
+    grid-template-columns: 4fr 1fr !important;
+}
+.grid{
+    margin: 50px 0;
+    display: grid !important;
+    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(248px, 1fr));
+}
+.cart{
+    margin: 50px 0;
+    background-color: #EDF2FC;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.281);
+    border-radius: 4px;
+}
+.sticky{
+    position: sticky;
+    top: 0;
+}
+.cartlist{
+    padding: 10px 0;
+    background-color: #ce145b;
+    color: #fff;
+}
+.group button,
+.order-now
+{
+    background-color: #ce145b !important;
+    color: #fff !important;
+}
+.group button:hover,
+.order-now:hover
+{
+    border: 1px solid #ce145b !important;
+    background-color: transparent !important;
+    color: #ce145b !important;
+}
+/* Modal */
+.modal-image{
+    width: 300px;
+    padding: 20px;
+}
+.cross{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.modal-header{
+    padding-left: 20px;
+}
+.order-now{
+    margin-left: 20px;
+}
+/* SWEET ALERT */
+.swal2-confirm{
+    background-color: #cb104893 !important;
+}
+@media only screen and (min-width: 992px){
+    .grid{
+        gap: 25px;
+        grid-template-columns: repeat(auto-fit, minmax(279px, 1fr));
+    }
+}
+@media only screen and (max-width: 768px){
+    .shop-grid{
+        grid-template-columns: 2fr 1fr !important;
+    }
+}
+@media (max-width: 576px){
+    .container, .container-sm {
+        max-width: 640px !important;
+    }
+    }
+@media only screen and (max-width: 498px){
+    .button-size{
+        font-size: 12px !important;
+        padding: 8px 10px !important;
+    }
+}
+@media only screen and (max-width: 451px){
+    .button-size{
+        font-size: 12px !important;
+        padding: 4px!important;
+    }
+}
+@media only screen and (max-width: 416px){
+    .grid{
+        gap: 25px;
+        grid-template-columns: repeat(auto-fit, minmax(206px, 1fr));
+    }
+    .summery{
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 375px){
+    .group button,
+    .order-now{
+        padding: 4px !important;
+        font-weight: 300 !important;
+        font-size: 11px;
+    }
+}
+
