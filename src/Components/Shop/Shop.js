@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
 import './Shop.css'
 import { ImCross } from 'react-icons/im'
@@ -36,7 +37,34 @@ const Shop = () => {
 
     let selectedBike = [];
     const handleAddToCart = props => {
+        //4 items adding limitation
+        if (bikeArr.length > 3) {
+            //Sweet alert
+            MySwal.fire({
+                didOpen: () => {
+                    MySwal.clickConfirm()
+                }
+            }).then(() => {
+                return MySwal.fire(<p>Error! More than 4 products cant be added :(</p>)
+            })
+            // Sweet alert end
+            return;
+        } else {
+            selectedBike = [...bikeArr, props];
+            setBikeArr(selectedBike);
+        }
 
+    }
+    const draw = array => {
+        //Lucky draw
+        if (array.length === 0) {
+            return;
+        } else {
+            const random = Math.floor(Math.random() * array.length)
+            const luckyProductArr = bikeArr[random]
+            setDrawItem(luckyProductArr)
+            openModal()
+        }
     }
     const reset = () => {
         setBikeArr([])
@@ -65,7 +93,7 @@ const Shop = () => {
                         <h4 className='text-center cartlist'>My Cart</h4>
                         <div className="cart-info">
                             {
-
+                                bikeArr.map(bike => <Cart key={bike.id} bike={bike}></Cart>)
                             }
                             <div className="text-center group">
 
@@ -83,6 +111,8 @@ const Shop = () => {
                                 </Modal>
                                 {/* ========================== */}
                                 {/* Lucky Draw and Reset button */}
+                                <button className='btn w-75 my-3 button-size' onClick={() => draw(bikeArr)}>Lucky Draw</button>
+                                <button className='btn w-75 button-size' onClick={reset}>Choose Again</button>
                             </div>
                         </div>
                     </div>
